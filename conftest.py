@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options
 
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default='chrome', help="Choose browser: chrome or firefox")
-    parser.addoption('--language', action='store', default='es', help="Choose language: en or ru")
+    parser.addoption('--language', action='store', default='ru', help="Choose language: en or ru")
 
 
 @pytest.fixture(scope="function")
@@ -30,5 +30,5 @@ def browser(request):
 
     yield browser
 
-    # print("\nquit browser..")
-    # browser.quit()
+    print("\nquit browser..")
+    browser.quit()
